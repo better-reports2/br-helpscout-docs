@@ -1,0 +1,189 @@
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+  body {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+  }
+
+  input,
+  button,
+  select,
+  textarea {
+    font-family: "Inter", sans-serif;
+  }
+
+  /* Logo */
+  .navbar .brand {
+    width: 218px;
+    height: 39px;
+  }
+
+  .navbar .nav li a{
+    font-size: 1.2em;
+  }
+  
+  .navbar .nav li a:hover,
+  .navbar .nav li a:focus,
+  .navbar .nav .active a,
+  .navbar .nav .active a:hover,
+  .navbar .nav .active a:focus {
+    color: #363636;
+    filter: brightness(70%);
+  }
+
+  .navbar .nav .active a {
+    font-weight: 500;
+  }
+
+  .navbar .nav .active a .caret {
+    display: none;
+  }
+
+  .navbar .nav li {
+    position: relative;
+  }
+
+  #searchBar button {
+    background-color: #379be6;
+  }
+
+  #docsSearch h1 {
+    font-weight: 700 !important;
+  }
+
+  .collection-category .category-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .category-list .category {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    border-radius: 8px;
+  }
+
+  .category-list .category .article-count {
+    margin-top: auto;
+  }
+
+  .category-list h3 {
+    font-weight: 500;
+  }
+
+  .category-list .category p {
+    color: #627d98;
+  }
+
+  .category-list .category .article-count {
+    color: #005bd3;
+  }
+
+  .under-construction {
+    background-color: #379be6;
+    color: #ffffff;
+    font-weight: 600;
+    text-align: center;
+    padding: 5px 0;
+    font-size: 14px;
+  }
+
+  .navbar .nav li:hover > .dropdown-menu {
+    display: block;
+  }
+
+  #fullArticle h3{
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 14%;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 8px;
+    white-space: nowrap;
+  }
+
+  .dropdown-menu:before,
+  .dropdown-menu:after {
+    display: none !important;
+  }
+
+  .dropdown-menu a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+  }
+
+  .dropdown-menu a:hover {
+    filter: none !important;
+    background-color: #e8f0f7 !important;
+    border-radius: 8px;
+  }
+</style>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QLJ9J3E5EV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-QLJ9J3E5EV');
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const header = $("header");
+    if (header.length > 0) {
+      header.prepend(
+        '<div class="under-construction">🚧 Our Help Centre is getting a refresh — some articles are still on the way. Can’t find what you need? Reach out via the Help widget.</div>'
+      );
+    }
+
+    const appLink = $("#app > a");
+    if (appLink.length > 0) {
+      appLink.on("click", function (e) {
+        e.preventDefault();
+        window.open("https://app.betterreports.com/", "_blank");
+      });
+    }
+
+const gettingStarted = header.find("#getting-started");
+if (gettingStarted.length > 0) {
+  gettingStarted.append(
+    '<div class="dropdown-menu"><a href="https://docs.betterreports.com/category/193-about-better-reports">About Better Reports</a><a href="https://docs.betterreports.com/category/194-manage-your-account">Manage your account</a><a href="https://docs.betterreports.com/category/195-explore-the-interface">Explore the interface</a><a href="https://docs.betterreports.com/category/196-plans-and-billing">Plans and billing</a></div>'
+  );
+}
+
+    const createReports = header.find("#create-reports");
+    if (createReports.length > 0) {
+      createReports.append(
+        '<div class="dropdown-menu"><a href="https://docs.betterreports.com/category/197-report-setup">Report setup</a><a href="https://docs.betterreports.com/category/198-add-and-manage-fields">Add and manage fields</a><a href="https://docs.betterreports.com/category/199-refine-your-report">Refine your report</a><a href="https://docs.betterreports.com/category/200-advanced-tools">Advanced tools</a></div>'
+      );
+    }
+
+    const shareReports = header.find("#share-reports");
+    if (shareReports.length > 0) {
+      shareReports.append(
+        '<div class="dropdown-menu"><a href="https://docs.betterreports.com/category/188-export-your-report">Export your report</a><a href="https://docs.betterreports.com/category/189-schedule-your-report">Schedule your report</a></div>'
+      );
+    }
+
+    // Remove two-column layout for categories
+    $(".category-list.two-col").removeClass("two-col");
+  });
+</script>
+
+<script type="text/javascript">!function(e,t,n){function a(){var e=t.getElementsByTagName("script")[0],n=t.createElement("script");n.type="text/javascript",n.async=!0,n.src="https://beacon-v2.helpscout.net",e.parentNode.insertBefore(n,e)}if(e.Beacon=n=function(t,n,a){e.Beacon.readyQueue.push({method:t,options:n,data:a})},n.readyQueue=[],"complete"===t.readyState)return a();e.attachEvent?e.attachEvent("onload",a):e.addEventListener("load",a,!1)}(window,document,window.Beacon||function(){});</script>
+<script type="text/javascript">window.Beacon('init', '897349c0-ad80-4d54-872e-6502d82b33ce')</script>
