@@ -151,20 +151,19 @@
       );
     }
 
-    const appLink = $("#app > a");
-    if (appLink.length > 0) {
-      appLink.on("click", function (e) {
-        e.preventDefault();
-        window.open("https://app.betterreports.com/", "_blank");
-      });
+    const signInLink = header.find("#sign-in");
+    if (signInLink.length > 0) {
+      signInLink.append(
+        '<div class="dropdown-menu"><a target="_blank" href="https://app.betterreports.com/signin">Sign In</a><a target="_blank" href="https://admin.shopify.com/apps/betterreports">Sign In with Shopify</a></div>'
+      )
     }
 
-const gettingStarted = header.find("#getting-started");
-if (gettingStarted.length > 0) {
-  gettingStarted.append(
-    '<div class="dropdown-menu"><a href="https://docs.betterreports.com/category/193-about-better-reports">About Better Reports</a><a href="https://docs.betterreports.com/category/194-manage-your-account">Manage your account</a><a href="https://docs.betterreports.com/category/195-explore-the-interface">Explore the interface</a><a href="https://docs.betterreports.com/category/196-plans-and-billing">Plans and billing</a></div>'
-  );
-}
+    const gettingStarted = header.find("#getting-started");
+    if (gettingStarted.length > 0) {
+      gettingStarted.append(
+        '<div class="dropdown-menu"><a href="https://docs.betterreports.com/category/193-about-better-reports">About Better Reports</a><a href="https://docs.betterreports.com/category/194-manage-your-account">Manage your account</a><a href="https://docs.betterreports.com/category/195-explore-the-interface">Explore the interface</a><a href="https://docs.betterreports.com/category/196-plans-and-billing">Plans and billing</a></div>'
+      );
+    }
 
     const createReports = header.find("#create-reports");
     if (createReports.length > 0) {
