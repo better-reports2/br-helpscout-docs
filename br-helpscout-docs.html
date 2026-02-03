@@ -151,9 +151,15 @@
       );
     }
 
-    const signInLink = header.find("#sign-in");
-    if (signInLink.length > 0) {
-      signInLink.append(
+    const signIn = header.find("#sign-in");
+    if (signIn.length > 0) {
+      const signInLink = signIn.find("a").first();
+      if(signInLink.length > 0){
+        signInLink.on('click', function(e) {
+          e.preventDefault();
+        });
+      }
+      signIn.append(
         '<div class="dropdown-menu"><a target="_blank" href="https://app.betterreports.com/signin">Sign In</a><a target="_blank" href="https://admin.shopify.com/apps/betterreports">Sign In with Shopify</a></div>'
       )
     }
