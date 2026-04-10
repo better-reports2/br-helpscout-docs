@@ -82,15 +82,6 @@
     color: #005bd3;
   }
 
-  .under-construction {
-    background-color: #379be6;
-    color: #ffffff;
-    font-weight: 600;
-    text-align: center;
-    padding: 5px 0;
-    font-size: 14px;
-  }
-
   .navbar .nav li:hover > .dropdown-menu {
     display: block;
   }
@@ -147,12 +138,7 @@
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const header = $("header");
-    if (header.length > 0) {
-      header.prepend(
-        '<div class="under-construction">🚧 Our Help Centre is getting a refresh — some articles are still on the way. Can’t find what you need? Reach out via the Help widget.</div>'
-      );
-    }
-
+   
     const signIn = header.find("#sign-in");
     if (signIn.length > 0) {
       const signInLink = signIn.find("a").first();
